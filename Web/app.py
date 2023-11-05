@@ -199,4 +199,8 @@ def logout():
     return redirect(url_for('index'))
 
 if __name__ == "__main__":
-    app.run(debug=True) 
+        # Specify the paths to your key and cert files
+    key_file = 'key.pem'
+    cert_file = 'cert.pem'
+
+app.run(debug=True, ssl_context=(cert_file, key_file))

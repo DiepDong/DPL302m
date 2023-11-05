@@ -38,7 +38,7 @@ function clearUploadedImage() {
 toggleCameraButton.addEventListener("click", function () {
   if (!cameraActive) {
     navigator.mediaDevices
-      .getUserMedia({ video: true })
+      .getUserMedia({ video: { facingMode: 'environment' } })
       .then((stream) => {
         cameraView.srcObject = stream;
         mediaStream = stream;
